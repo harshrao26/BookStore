@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GoArrowUpRight } from "react-icons/go";
+
 const CartPage = () => {
-  // Dummy data for cart items
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -39,7 +40,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-4">
       <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
       {cartItems.length === 0 ? (
@@ -53,7 +54,7 @@ const CartPage = () => {
                 <img src={item.image} alt={item.title} className="w-24 h-32 object-cover" />
                 <div className="flex-1 px-4">
                   <h2 className="text-xl font-semibold">{item.title}</h2>
-                  <p className="text-gray-600">Price: ${item.price}</p>
+                  <p className="text-gray-600">Price: ₹{item.price}</p>
                   <div className="flex items-center mt-2">
                     <button
                       className="px-2 py-1 bg-gray-200 rounded"
@@ -77,7 +78,7 @@ const CartPage = () => {
                     Remove
                   </button>
                 </div>
-                <p className="text-lg font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                <p className="text-lg font-semibold">₹{(item.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
           </div>
@@ -91,10 +92,11 @@ const CartPage = () => {
             </div>
             <div className="flex justify-between mb-4">
               <span>Total Price:</span>
-              <span>${calculateTotal()}</span>
+              <span>₹{calculateTotal()}</span>
             </div>
-            <Link to='/shipping' className="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-600 transition duration-200">
-              Proceed to Checkout
+            <Link to='/shipping' className="bg-blue-500 text-white w-full p-2 flex items-center justify-center rounded-lg hover:bg-blue-600 transition duration-200 gap-2">
+            Checkout
+            <GoArrowUpRight className='mt-1' size={20} />
             </Link>
           </div>
         </div>

@@ -3,21 +3,21 @@ import React, { useState, useEffect } from 'react';
 const slides = [
   {
     id: 1,
-    title: 'Slide 1',
-    description: 'This is the first slide',
-    img: 'https://via.placeholder.com/800x400?text=Slide+1',
+    title: 'The Haunting of Hill House',
+    description: 'A psychological horror about a group of people investigating a haunted mansion, where the line between reality and the supernatural becomes blurred.',
+    img: 'https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/667d74b5e073485b32692b96_Rich%20Dad%20Poor%20Dad.webp',
   },
   {
     id: 2,
-    title: 'Slide 2',
-    description: 'This is the second slide',
-    img: 'https://via.placeholder.com/800x400?text=Slide+2',
+    title: 'The Exorcist',
+    description: 'A chilling story about a girl possessed by a demon, and the priest who tries to save her.',
+    img: 'https://images.unsplash.com/photo-1725663656850-7bc515816fcd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 3,
-    title: 'Slide 3',
-    description: 'This is the third slide',
-    img: 'https://via.placeholder.com/800x400?text=Slide+3',
+    title: 'Frankenstein',
+    description: 'A tale of a scientist who creates life in the form of a monster, leading to horrifying consequences.',
+    img: 'https://images.unsplash.com/photo-1725914774525-0e81a46583b6?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 
@@ -45,12 +45,12 @@ const Carousel = () => {
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* <img
+          <img
             src={slide.img}
             alt={slide.title}
             className="w-full h-full object-cover"
-          /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-center items-center">
             <h2 className="text-white text-3xl md:text-4xl font-bold">
               {slide.title}
             </h2>
